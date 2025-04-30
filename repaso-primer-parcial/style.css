@@ -1,0 +1,209 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+:root {
+	--blue-100: #dbeafe;
+	--blue-500: #3b82f6;
+	--blue-700: #1d4ed8;
+
+    --slate-900: #0f172a;
+}
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body {
+	font-family: "Poppins", sans-serif;
+}
+h2,
+h3 {
+	text-align: center;
+	margin-bottom: 12px;
+}
+p {
+    text-wrap: pretty;
+    line-height: 1.7;
+}
+header {
+	width: min(100%, 990px);
+	margin-inline: auto;
+
+    h1 {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        padding: 1rem;
+        font-size: 2rem;
+        font-weight: 600;
+
+        .icon {
+            display: inline-block;
+            width: 2rem;
+            aspect-ratio: 1;
+        }
+    }
+
+	figure {
+		width: 100%;
+
+		img {
+			display: block;
+			width: inherit;
+			border-end-start-radius: 12px;
+			border-end-end-radius: 12px;
+			aspect-ratio: 16/9;
+		}
+	}
+	ul {
+		display: flex;
+		gap: 16px;
+		padding-inline: 1rem;
+		font-weight: 500;
+		list-style: none;
+
+		li {
+			position: relative;
+
+			a {
+				color: #000;
+				text-decoration: none;
+			}
+
+			&::before {
+				content: "";
+				position: absolute;
+				bottom: -4px;
+				left: 0;
+				width: 0;
+				height: 4px;
+				background-color: var(--blue-700);
+				border-radius: 4px;
+				transition: width 0.3s ease-in-out;
+			}
+			&:hover::before {
+				width: 100%;
+			}
+		}
+	}
+}
+form {
+	width: min(100%, 600px);
+	margin-inline: auto;
+	padding: 20px 16px;
+	background-color: #fff;
+	border-radius: 12px;
+
+	label,
+	input,
+	textarea {
+		display: block;
+		width: 100%;
+		padding: 12px 20px;
+		font-size: 1rem;
+		border-radius: 20px;
+		border: none;
+		outline: none;
+	}
+	input:not(input[type="submit"]),
+	textarea {
+		background-color: var(--blue-100);
+
+        &:focus {
+            outline: 2px solid var(--blue-700);
+        }
+	}
+	textarea {
+		resize: none;
+		field-sizing: content;
+		min-height: 100px;
+		max-height: 200px;
+	}
+	input[type="submit"] {
+		margin-inline: auto;
+		width: fit-content;
+		font-weight: 600;
+		color: #fff;
+		background-color: var(--blue-500);
+		cursor: pointer;
+		transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+
+		&:hover {
+			background-color: var(--blue-700);
+		}
+        &:active {
+            transform: scale(0.95);
+        }
+	}
+	textarea {
+		margin-bottom: 20px;
+	}
+}
+.wrapper {
+	max-width: 990px;
+	margin-inline: auto;
+	padding: 1rem;
+}
+.wavy-block {
+	position: relative;
+	padding-block: 6rem;
+	margin-block: 40px;
+	background-image: linear-gradient(to right, #00c2f2, #0575e6);
+
+	--mask: radial-gradient(43.05px at 50% 60.8px, #000 99%, #0000 101%)
+			calc(50% - 64px) 0/128px 51% repeat-x,
+		radial-gradient(43.05px at 50% -28.8px, #0000 99%, #000 101%) 50% 32px/128px
+			calc(51% - 32px) repeat-x,
+		radial-gradient(43.05px at 50% calc(100% - 60.8px), #000 99%, #0000 101%)
+			50% 100%/128px 51% repeat-x,
+		radial-gradient(43.05px at 50% calc(100% + 28.8px), #0000 99%, #000 101%)
+			calc(50% - 64px) calc(100% - 32px) / 128px calc(51% - 32px) repeat-x;
+	-webkit-mask: var(--mask);
+	mask: var(--mask);
+}
+.wavy-top {
+	position: relative;
+	padding-block: 6rem;
+	margin-top: 40px;
+
+	--mask: radial-gradient(43.05px at 50% 60.8px, #000 99%, #0000 101%)
+			calc(50% - 64px) 0/128px 100%,
+		radial-gradient(43.05px at 50% -28.8px, #0000 99%, #000 101%) 50% 32px/128px
+			100% repeat-x;
+	-webkit-mask: var(--mask);
+	mask: var(--mask);
+}
+footer {
+    --footer-bg: #15191c;
+
+	color: #fff;
+	background-color: var(--footer-bg);
+
+	.social {
+		ul {
+			display: flex;
+			justify-content: center;
+            gap: 16px;
+			list-style: none;
+
+            .social-item {
+                --social-item-hover: #374149;
+
+                border-radius: 12px;
+                transition: background-color 0.3s ease-in-out;
+                cursor: pointer;
+
+                &:hover {
+                    background-color: var(--social-item-hover);
+                }
+                
+                a {
+                    display: inline-block;
+                    padding: 1rem;
+                }
+                .social-icon {
+                    width: 32px;
+                    aspect-ratio: 1;
+                }
+            }
+		}
+	}
+}

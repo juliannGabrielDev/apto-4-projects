@@ -1,0 +1,49 @@
+main {
+	background-color: var(--content-bg);
+  margin-top: 56px; /*Altura del navbar*/
+
+  @media (width >= 64rem) {
+    margin-top: 0;
+
+    article h1 {
+			font-size: 1.75rem;
+    }
+  }
+
+	.image {
+		width: 100%;
+
+		img {
+			width: inherit;
+			vertical-align: top;
+			object-fit: cover;
+			aspect-ratio: 16/9;
+
+			@media (width >= 64rem) {
+        margin-top: initial;
+				border-start-end-radius: 12px;
+				border-end-end-radius: 12px;
+			}
+		}
+	}
+
+	.posts {
+		padding: 20px;
+
+		article h1 {
+			margin-bottom: 20px;
+			color: var(--h1-color);
+			font-family: var(--poppins);
+			font-size: 1.50rem;
+			text-transform: uppercase;
+			letter-spacing: -2px;
+		}
+
+		article p {
+			margin-bottom: 16px;
+			line-height: 28px;
+			font-family: var(--montserrat);
+			color: var(--text-color);
+		}
+	}
+}

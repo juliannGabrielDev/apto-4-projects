@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table</title>
+    <link rel="stylesheet" href="table.css">
+</head>
+<body>
+    <div class="container">
+        <div class="tab-box">
+            <button class="tab-btn active">Home</button>
+            <button class="tab-btn">About</button>
+            <button class="tab-btn">Blogs</button>
+            <button class="tab-btn">Cantact Us</button>
+        </div>
+        <div class="content-box">
+            <div class="content active">
+                <h2>Home</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius dolore saepe molestias voluptatibus velit, nihil autem deserunt quibusdam, dolorum maxime porro totam odio nostrum harum, aut ipsa rerum a ducimus.</p>
+            </div>
+
+            <div class="content">
+                <h2>About</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius dolore saepe molestias voluptatibus velit, nihil autem deserunt quibusdam, dolorum maxime porro totam odio nostrum harum, aut ipsa rerum a ducimus.</p>
+            </div>
+
+            <div class="content">
+                <h2>Blogs</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius dolore saepe molestias voluptatibus velit, nihil autem deserunt quibusdam, dolorum maxime porro totam odio nostrum harum, aut ipsa rerum a ducimus.</p>
+            </div>
+
+            <div class="content">
+                <h2>Contact Us</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius dolore saepe molestias voluptatibus velit, nihil autem deserunt quibusdam, dolorum maxime porro totam odio nostrum harum, aut ipsa rerum a ducimus.</p>
+            </div>
+        </div>
+    </div>
+    <script>
+        const tabBtns = document.querySelectorAll(".tab-btn");
+        const contents = document.querySelectorAll(".content");
+
+        tabBtns.forEach((btn, index) => {
+            btn.addEventListener("click", () => {
+                tabBtns.forEach(btn => {
+                    btn.classList.remove("active");
+                });
+                btn.classList.add("active");
+                contents.forEach(content => {
+                    content.classList.remove("active");
+                });
+                contents[index].classList.add("active");
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,9 @@
+footer {
+    font-family: var(--montserrat);
+    clear: both;
+    background-color: var(--footer-bg);
+    color: #fff;
+    padding: 15px 0;
+    text-align: center;
+    font-size: .75rem;
+}

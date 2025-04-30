@@ -1,0 +1,17 @@
+#hero {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100dvh;
+    background-color: var(--emerald-200);
+    z-index: 1;
+}
+.content {
+    position: relative;
+    background-color: #fff;
+    z-index: 10;
+}
+.height {
+    height: 80dvh;
+}

@@ -1,0 +1,62 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    font-family: "Poppins", sans-serif;
+}
+main {
+    padding: 20px;
+}
+:is(h1, h2, h3) {
+    text-wrap: balance;
+}
+p {
+    font-size: 1rem;
+    line-height: 2;
+    text-wrap: pretty;
+}
+
+.wrapper {
+    max-width: 75rem;
+    margin-inline: auto;
+}
+.btn {
+    padding: var(--p, 8px);
+    border: none;
+    background-color: var(--bg-color, var(--emerald-100));
+    border-radius: 12px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+
+    &:hover {
+        background-color: var(--hover-bg-color, var(--emerald-200));
+
+        svg {
+            transform: scale(1.1);
+        }
+    }
+    &:active {
+        transform: scale(0.9);
+    }
+
+    svg {
+        width: var(--w, 1.5rem);
+        fill: var(--svg-color, var(--teal-900));
+        transition: transform 0.3s ease;
+    }
+}
+#btn-back-top {
+    position: fixed;
+    bottom: 12px;
+    right: 12px;
+    display: none;
+    z-index: 100;
+
+    &.show {
+        display: block;
+    }
+}

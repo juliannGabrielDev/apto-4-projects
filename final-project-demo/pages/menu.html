@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú | Verde Tostado</title>
+    <style>
+        .hidden {
+            display: none;
+        }
+        .icon {
+            cursor: pointer;
+            font-size: 24px;
+            background: lightgray;
+            padding: 5px;
+            border-radius: 50%;
+            display: inline-block;
+        }
+        .select-container {
+            position: absolute;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Menú</h1>
+
+    <div class="icon" id="icon">🔽</div>
+    <div class="select-container hidden" id="selectContainer">
+        <select id="select" size="3">
+            <option value="opcion1">Opción 1</option>
+            <option value="opcion2">Opción 2</option>
+            <option value="opcion3">Opción 3</option>
+        </select>
+    </div>
+
+    <script>
+        const icon = document.getElementById("icon");
+        const selectContainer = document.getElementById("selectContainer");
+        const select = document.getElementById("select");
+
+        icon.addEventListener("click", () => {
+            selectContainer.classList.toggle("hidden");
+        });
+
+        select.addEventListener("blur", () => {
+            selectContainer.classList.add("hidden");
+        });
+    </script>
+</body>
+</html>

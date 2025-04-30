@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio y Video</title>
+    <link rel="stylesheet" href="audio-video.css">
+</head>
+<body>
+    <main class="media">
+        <div class="media-selector">
+            <button class="btn active">Audio</button>
+            <button class="btn">Video</button>
+        </div>
+        <div class="media-player">
+            <div class="audio content active">
+                <audio id="audio" controls>
+                    <source src="media/cry-your-heart-out.mp3" type="audio/mp3">
+                    <p>Tu navegador no soporta el elemento de audio.</p>
+                </audio>
+                <div class="img-wrapper">
+                    <img class="track-cover" src="media/img/adele-30.jpg" alt="Adele 30">
+                </div>
+                <h3>Cry Your Heart Out</h3>
+                <div class="audio-controls">
+                    <span id="audio-timestamp">00:00</span>
+                    <input id="audio-progress-bar" type="range" min="0" max="100" value="0">
+                    <span id="audio-duration">00:00</span>
+                    <button id="audio-prev-btn" class="btn">
+                        <img src="media/img/player-track-prev.svg" alt="Pista previa">
+                    </button>
+                    <button id="audio-play-btn" class="btn paused">
+                        <img class="" src="media/img/player-play.svg" alt="Pause">
+                    </button>
+                </div>
+            </div>
+            <div class="video content">
+                <video id="video">
+                    <source src="media/hometown-glory.webm" type="video/webm">
+                    <p>Tu navegador no soporta el elemento de video.</p>
+                </video>
+                <div class="video-controls">
+                    <button id="video-back-btn" class="btn">-10s</button>
+                    <button id="video-play-btn" class="btn paused">
+                        <img class="onPause" src="media/img/player-play.svg" alt="Pause">
+                    </button>
+                    <button id="video-fordward-btn" class="btn">+10s</button>
+                </div>
+            </div>
+            <div class="keyboard-shortcuts">
+                <h3>Atajos de teclado</h3>
+                <ul>
+                    <li><span class="key">Espacio</span> , <span class="key">K</span> Pausar</li>
+                    <li><span class="key">L</span> Avanzar 10 segundos</li>
+                    <li><span class="key">J</span> Retroceder 10 segundos</li>
+                    <li><span class="key">M</span> Silenciar</li>
+                </ul>
+            </div>
+        </div>
+    </main>
+    <script src="audio-video.js"></script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+:root {
+    --text-color: #000;
+    --orange-200: #fed7aa;
+    --cameo-900: #5c3b32;
+    --cameo-300: #cdab8f;
+
+    --teal-50: #ecfdf5;
+    --teal-900: #134e4a;
+    --emerald-100: #d1fae5;
+    --emerald-200: #a7f3d0;
+    --lime-200: #d9f99d;
+    --lime-950: #1a2e05;
+}
+@font-face {
+    font-family: "Poppins";
+    src: url("../../assets/fonts/Poppins-Regular.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Poppins";
+    src: url("../../assets/fonts/Poppins-Bold.ttf") format("truetype");
+    font-weight: bold;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Poppins";
+    src: url("../../assets/fonts/Poppins-Medium.ttf") format("truetype");
+    font-weight: 500;
+    font-style: normal;
+}
+@keyframes move-out {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0.5;
+        transform: translateY(-35%);
+  }
+}
+@keyframes move-in {
+        from {
+            clip-path: polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%);
+        }
+        to {
+            clip-path: polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%);
+        }
+    }
+::view-transition-old(root) {
+    animation: move-out 1s cubic-bezier(0.87, 0, 0.13, 1) both;
+}
+::view-transition-new(root) {
+    animation: move-in 1s cubic-bezier(0.87, 0, 0.13, 1) both;
+    opacity: 1;
+  }

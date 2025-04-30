@@ -1,0 +1,6 @@
+@import url("general.css");
+@import url("components/theme.css");
+
+/* Components */
+@import url("components/navbar.css");
+@import url("components/footer.css");

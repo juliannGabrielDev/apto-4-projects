@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+:root {
+    --lime-50: #f7fee7;
+    --lime-300: #d9f99d;
+    --lime-900: #365314;
+    --red-300: #fca5a5;
+    --red-900: #7f1d1d;
+    --cyan-400: #22d3ee;
+    --purple-300: #d8b4fe;
+    --purple-900: #581c87;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: "Poppins", sans-serif;
+    background-color: var(--lime-50);
+}
+h1 {
+    margin-bottom: 20px;
+    text-align: center;
+    color: var(--lime-900);
+}
+main {
+    height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.btn {
+    width: fit-content;
+    padding: 16px;
+    font-size: 1rem;
+    font-weight: 600;
+    background-color: var(--bg-color, var(--lime-900));
+    color: var(--font-color, var(--lime-50));
+    border-radius: 16px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:active {
+        transform: scale(0.95);
+    }
+}
+.calculator {
+    width: min(90%, 500px);
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    background-color: #fff;
+    border-radius: 16px;
+    transition: box-shadow 0.3s ease;
+
+    @media (width > 800px) {
+        &:hover {
+            box-shadow: 5px 5px var(--cyan-400), 10px 10px var(--purple-300);
+        }
+    }
+
+    .result-wrapper {
+        position: relative;
+
+        #result {
+            width: 100%;
+            text-align: center;
+            font-size: 1.25rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        #result.scale {
+            transform: scale(1.1);
+            background-color: var(--purple-300);
+        }
+        #copy-btn {
+            position: absolute;
+            top: 50%;
+            right: 0;
+            height: fit-content;
+            transform: translateY(-50%);
+        }
+        #copy-btn.btn {
+            --bg-color: var(--purple-900);
+            --font-color: var(--purple-300);
+
+            opacity: 0;
+            padding: 8px 12px;
+            font-size: 12px;
+
+            &:active {
+                transform: translateY(-50%) scale(0.95);
+            }
+        }
+        #copy-btn.show {
+            opacity: 1;
+        }
+    }
+    .buttons-wrapper {
+        margin-top: 16px;
+        display: flex;
+        justify-content: end;
+        gap: inherit;
+    }
+    #clear-btn {
+        --bg-color: var(--red-300);
+        --font-color: var(--red-900);
+    }
+    .icon {
+        align-self: center;
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: var(--lime-900);
+    }
+    .input {
+        padding: 16px;
+        border: none;
+        background-color: var(--lime-300);
+        border-radius: 16px;
+        outline: none;
+
+        &::placeholder {
+            color: var(--lime-900);
+        }
+    }
+}

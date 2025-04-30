@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <link rel="stylesheet" href="calculator.css">
+</head>
+<body>
+    <main>
+        <h1>Calculadora</h1>
+        <form class="calculator" action="">
+            <input id="input-num-1" class="input" type="number" placeholder="Ingrese un número">
+            <span class="icon">+</span>
+            <input id="input-num-2" class="input" type="number" placeholder="Ingrese un número">
+            <span class="icon">=</span>
+
+            <div class="result-wrapper">
+                <input id="result" class="input" type="text" placeholder="00.00" disabled>
+                <input id="copy-btn" class="btn" type="button" value="Copiar">
+            </div>
+
+            <div class="buttons-wrapper">
+                <input id="clear-btn" class="btn" type="button" value="AC">
+                <input id="calculate-btn" class="btn" type="button" value="Resultado">
+            </div>
+        </form>
+    </main>
+
+    <script src="calculator.js"></script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Spicy+Rice&display=swap');
+footer {
+    @media (width > 42rem) {
+        padding: 24px;
+    }
+}
+
+footer .wrapper {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    padding: clamp(16px, 5vw, 28px);
+    color: var(--teal-50);
+    background-color: var(--teal-900);
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+
+    @media (width > 42rem) {
+        border-radius: 28px;
+    }
+
+    ul {
+        list-style: none;
+    }
+    h3 {
+        margin-bottom: 12px;
+    }
+    a {
+        color: var(--teal-50);
+        text-decoration: none;
+    }
+    .word {
+        font-family: "Spicy Rice";
+        margin-bottom: 40px;
+        grid-column: 1 / -1;
+        font-size: clamp(48px, 15vw, 128px);
+        text-align: center;
+        letter-spacing: 0.75rem;
+        font-weight: bolder;
+        user-select: none;
+
+        @media (width > 42rem) {
+            margin-bottom: initial;
+        }
+
+        .letter {
+            display: inline-block;
+            color: var(--lime-200);
+
+            &:first-child {
+                transform: rotate(-15deg);
+            }
+            &:nth-child(3) {
+                transform: rotate(-15deg);
+            }
+            &:last-child {
+                transform: rotate(15deg);
+            }
+        }
+    }
+}

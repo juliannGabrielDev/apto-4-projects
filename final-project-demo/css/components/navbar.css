@@ -1,0 +1,106 @@
+.navbar {
+    position: sticky;
+    top: 0;
+    padding: 12px 20px;
+    background-color: #fff;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+    z-index: 200;
+    transform: translateZ(0);
+    transition: transform 0.3s ease;
+
+    &.hide {
+        transform: translateY(-100%);
+    }
+    .wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    #menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        bottom: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        padding: 100px 32px;
+        width: 80%;
+        height: 100dvh;
+        background-color: #fff;
+        z-index: 100;
+        list-style: none;
+        transition: right 0.3s ease;
+
+        &.show {
+            right: 0;
+        }
+
+        @media (width > 42rem) {
+            position: initial;
+            flex-direction: row;
+            padding: initial;
+            width: auto;
+            height: auto;
+        }
+
+        li {
+            a {
+                position: relative;
+                text-decoration: none;
+                color: #000;
+                font-weight: 500;
+
+                &:hover::after {
+                    width: 100%;
+                }
+                &::after {
+                    content: "";
+                    position: absolute;
+                    bottom: -8px;
+                    left: 0;
+                    width: 0;
+                    height: 4px;
+                    background-color: var(--teal-900);
+                    transition: width 0.3s ease;
+                }
+            }
+        }
+    }
+    .btn-group {
+        display: flex;
+        gap: 12px; 
+    }
+    #btn-show-menu, #btn-hide-menu {
+        --bg-color: #fff;
+        --p: 0;
+        --hover-bg-color: #fff;
+        display: inline-block;
+
+        svg {
+            --w: 2rem;
+        }
+
+        @media (width > 42rem) {
+            display: none;
+        }
+    }
+    #btn-hide-menu {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+    }
+}
+@supports (animation-timeline: scroll(root)) {
+    .navbar {
+        animation: navbar linear both;
+        animation-timeline: scroll(root);
+        animation-range: 0 60px;
+        box-shadow: none;
+    }
+    @keyframes navbar {
+        to {
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+        }
+    }
+}

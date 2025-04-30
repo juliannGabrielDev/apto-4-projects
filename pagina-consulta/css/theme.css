@@ -1,0 +1,51 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+:root {
+  /* colors */
+  --bg: #99c1f1;
+  --content-bg: #fff;
+  --h1-color: #424242;
+  --text-color: #000;
+  --footer-bg: #000;
+  --dark-light: #000;
+
+  --blue-1: #f1f6fd;
+  --blue-2: #293f7f;
+  --blue-3: #1d284e;
+  --green-1: #84f1ab;
+  --green-2: #57e389;
+
+  /* Iconos */
+  --theme-button-icon: url(../../assets/icons/moon.svg);
+  --menu-button-icon: url(../../assets/icons/dark-sidebar.svg);
+
+  /* fonts */
+  --poppins: "Poppins", sans-serif;
+  --montserrat: "Montserrat", sans-serif;
+
+  /* shadow */
+  --shadow-color: 213deg 44% 48%;
+  --shadow-elevation-high: 0.3px 0.5px 0.7px hsl(var(--shadow-color) / 0.34),
+    1.5px 2.9px 3.7px -0.4px hsl(var(--shadow-color) / 0.34),
+    2.7px 5.4px 6.8px -0.7px hsl(var(--shadow-color) / 0.34),
+    4.5px 8.9px 11.2px -1.1px hsl(var(--shadow-color) / 0.34),
+    7.1px 14.3px 18px -1.4px hsl(var(--shadow-color) / 0.34),
+    11.2px 22.3px 28.1px -1.8px hsl(var(--shadow-color) / 0.34),
+    17px 33.9px 42.7px -2.1px hsl(var(--shadow-color) / 0.34),
+    25px 50px 62.9px -2.5px hsl(var(--shadow-color) / 0.34);
+}
+
+/* Dark mode */
+:root:has(#theme-checkbox:checked) {
+    --bg: #000;
+    --content-bg: #111827;
+    --h1-color: #f3f4f6;
+    --text-color: #fff;
+    --dark-light: #fff;
+    --footer-bg: #2d46a0;
+
+    --theme-button-icon: url(../../assets/icons/sun.svg);
+    --menu-button-icon: url(../../assets/icons/white-sidebar.svg);
+
+    --shadow-elevation-high: none;
+}
